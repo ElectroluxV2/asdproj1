@@ -62,7 +62,7 @@ int main(int argc, char** argv) {
     quickSort(arrayCopy, 0, testSize - 1);
     timerStop();
 
-    free(arrayCopy);
     free(inputArray);
+    free(arrayCopy);
     return 0;
 }
