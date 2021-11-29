@@ -9,7 +9,10 @@
 #include <malloc.h>
 #include <memory.h>
 
-void redirectFileToStdin(char* file);
+struct Timer;
+void timerStart(const char* message);
+void timerStop();
+FILE* redirectFileToStdin(const char* file);
 long* getInputArray(unsigned long length);
 void printArray(const long* array, long length);
 void swap(long* first, long* second);

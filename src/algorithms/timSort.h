@@ -5,7 +5,7 @@
 #ifndef ASDPROJ1_TIMSORT_H
 #define ASDPROJ1_TIMSORT_H
 
-#include "shared.h"
+#include "../shared.h"
 #include "insertionSort.h"
 void timSort(long* array, long length);
 

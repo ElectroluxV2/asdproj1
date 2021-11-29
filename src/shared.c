@@ -4,15 +4,27 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "shared.h"
 
 const long RAW_INPUT_BUFFER_NUMBER = 50;
 
-void redirectFileToStdin(char* file) {
-    FILE* ptr = freopen(file, "r", stdin);
-    if (ptr == NULL) {
-        printf("Failed to open %s\n", file);
-    }
+struct Timer {
+    clock_t start, stop;
+} static timer;
+
+void timerStart(const char* message) {
+    printf("%s", message);
+    timer.start = clock();
+}
+
+void timerStop() {
+    timer.stop = clock();
+    printf("took %.2fms\n", 1000 * (double) (timer.stop - timer.start) / CLOCKS_PER_SEC);
+}
+
+FILE* redirectFileToStdin(const char* file) {
+    return freopen(file, "r", stdin);
 }
 
 long* getInputArray(const unsigned long length) {

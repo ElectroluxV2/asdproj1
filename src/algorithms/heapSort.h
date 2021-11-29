@@ -5,7 +5,7 @@
 #ifndef ASDPROJ1_HEAPSORT_H
 #define ASDPROJ1_HEAPSORT_H
 
-#include "shared.h"
+#include "../shared.h"
 void heapSort(long* array, long length);
 
 #endif //ASDPROJ1_HEAPSORT_H

@@ -5,7 +5,7 @@
 #ifndef ASDPROJ1_INSERTIONSORT_H
 #define ASDPROJ1_INSERTIONSORT_H
 
-#include "shared.h"
+#include "../shared.h"
 void insertionSort(long* array, long left, long right);
 
 #endif //ASDPROJ1_INSERTIONSORT_H

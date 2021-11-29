@@ -6,7 +6,7 @@
 #define ASDPROJ1_RADIXSORT_H
 
 
-#include "shared.h"
+#include "../shared.h"
 #include "countingSort.h"
 void radixSort(long* array, long length);
 
