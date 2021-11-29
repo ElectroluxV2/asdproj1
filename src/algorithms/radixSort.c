@@ -14,7 +14,7 @@ long findMax(const long* array, const long length) {
 }
 
 void radixSort(long* array, const long length) {
-    const long max = 999999999;//findMax(array, length);
+    const long max = findMax(array, length);
     for (long exp = 1; max / exp > 0; exp *= 10) {
         countingSort(array, length, exp);
     }
