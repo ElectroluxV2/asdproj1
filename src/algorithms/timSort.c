@@ -45,20 +45,20 @@ void merge(long *array, long l, long m, long r) {
     }
     
     while (j < lengthRight) {
-        *(array + l) = *(arrayRight + j);
+        *(array + k) = *(arrayRight + j);
         k++;
         j++;
     }
 }
 
 void timSort(long *array, long length) {
-    int RUN = 32;
+    int chunk = 32;
 
-    for (long i = 0; i < length; i += RUN) {
-        insertionSort(array, i, min(i + RUN - 1, length - 1));
+    for (long i = 0; i < length; i += chunk) {
+        insertionSort(array, i, min(i + chunk - 1, length - 1));
     }
 
-    for (long size = RUN; size < length; size = 2 * size) {
+    for (long size = chunk; size < length; size = 2 * size) {
         for (long arrayLeft = 0; arrayLeft < length; arrayLeft += 2 * size) {
             long mid = arrayLeft + size - 1;
             long arrayRight = min((arrayLeft + 2*size - 1), (length-1));
